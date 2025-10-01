@@ -45,6 +45,16 @@ section.container {
                 padding: 2px;
                 text-align: center;
             }
+
+            .highlight {
+                background-color: lightgreen;
+            }
+        }
+
+        table {
+           td:first-of-type, tr:first-of-type, td:last-of-type, tr:last-of-type {
+                background-color: lightblue;
+            }
         }
     }
 }
