@@ -55,6 +55,11 @@ section.container {
            td:first-of-type, tr:first-of-type, td:last-of-type, tr:last-of-type {
                 background-color: lightblue;
             }
+
+        }
+
+        tr:hover {
+            background-color: yellow;
         }
     }
 }

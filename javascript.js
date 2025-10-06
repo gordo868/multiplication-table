@@ -1,4 +1,4 @@
-function getRowsDesired() {
+/*function getRowsDesired() {
     // console.log(Number(document.getElementById('rows').value));
     return Number(document.getElementById("rows").value)
 }
@@ -13,7 +13,22 @@ function getHighlightValue() {
     if (highlightValue !== '') {
         return Number(highlightValue)
     }
+}*/
+
+// this method can be used to replace the three duplicative methods above
+// this is a good "pattern"
+function getInputValueAsNumber(inputId) {
+    if (document.getElementById(inputId)) {
+        return Number(document.getElementById(inputId).value)
+    } else { // error handling
+        console.log('Sorry, couldn\'t find this ID: ', inputId)
+    }
 }
+
+// getRowsDesired() is equivalent to getInputAsNumber("rows")
+// getColsDesired() is equivalent to getInputAsNumber("cols")
+// getHighlightDesired() is equivalent to getInputAsNumber("highlight")
+
 
 function createWithHtmlTable(rows, cols, highlight) { // method declaration, has two parameters
     let string // define a variable called string
