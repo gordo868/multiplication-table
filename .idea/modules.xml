@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../flex-practice/.idea/flex-practice.iml" filepath="$PROJECT_DIR$/../flex-practice/.idea/flex-practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/multiplication-table.iml" filepath="$PROJECT_DIR$/.idea/multiplication-table.iml" />
     </modules>
   </component>

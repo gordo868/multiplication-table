@@ -1,142 +1,44 @@
-/*function getRowsDesired() {
-    // console.log(Number(document.getElementById('rows').value));
-    return Number(document.getElementById("rows").value)
-}
-
-function getColumnsDesired() {
-    return Number(document.getElementById("cols").value)
-}
-
-function getHighlightValue() {
-    let highlightValue = document.getElementById("highlight").value
-
-    if (highlightValue !== '') {
-        return Number(highlightValue)
-    }
-}*/
-
-// this method can be used to replace the three duplicative methods above
-// this is a good "pattern"
 function getInputValueAsNumber(inputId) {
     if (document.getElementById(inputId)) {
         return Number(document.getElementById(inputId).value)
-    } else { // error handling
+    } else {
         console.log('Sorry, couldn\'t find this ID: ', inputId)
     }
 }
 
-// getRowsDesired() is equivalent to getInputAsNumber("rows")
-// getColsDesired() is equivalent to getInputAsNumber("cols")
-// getHighlightDesired() is equivalent to getInputAsNumber("highlight")
+function createFlexTable(flexRows, flexCols, flexHighlight) {
+    let string
+    if (flexRows && flexCols) {
+        string = "<div class='tableContainer'>\n"
 
+        for (let row = 1; row <= flexRows; row++) {
 
-function createWithHtmlTable(rows, cols, highlight) { // method declaration, has two parameters
-    let string // define a variable called string
-    if (rows && cols) { // if rows and columns were provided
-        string = "<table>\n" // start building the HTML table
+            if (flexHighlight && flexHighlight === row) {
 
-        // first "for" loop to build the rows of the table
-        for (let row = 1; row <= rows; row++) {
-
-            if (highlight && highlight === row) {
-                // if highlight "IS TRUTHY" and its value matches the row
-                // we're on, then do this next
-                string += "<tr class='highlight'>\n"
+                string += "<div class='tableHighlight tableRow'>\n"
             } else {
-                // otherwise just start a regular HTML row with no class
-            string += "<tr>\n" // start building an HTML row
+                string += "<div class='tableRow'>"
             }
-            // second "for" loop to build the columns of EACH row
-            for (let col = 1; col <= cols; col++) {
 
-                if (highlight && highlight === col) {
-                    string += "<td class='highlight'>\n"
+            for (let col = 1; col <= flexCols; col++) {
+
+                if (flexHighlight && flexHighlight === col) {
+                    string += "<div class='tableHighlight tableCol'>\n"
                 } else {
-                string += "<td>" // start building a single "cell" or column in the HTML row
+                    string += "<div class='tableCol'>"
                 }
 
-                string += row * col // populate the contents of the HTML cell
-                string += "</td>\n" //complete the HTML cell
+                string += row * col
+                string += "</div>\n"
             }
-            string += "</tr>\n" // complete the HTML row
+            string += "</div>\n"
         }
 
-        string += "</table>\n" // complete the HTML table
-    } else { // I guess the method wasn't provided either rows or columns
-        string = 'Provide some inputs' // set values of "string" variable to "Provide some inputs"
-    }
 
-    document.getElementById("output").innerHTML = string; // WRITE the string we've just built to an element
-    // in the HTML document whose ID is "output"
-}
-
-
-
-
-
-
-
-
-
-
-/*
-
-/!* LOOP EXAMPLES *!/
-console.log('Here\'s a for loop showing 1...10:\n')
-for (let i = 0 ; i <10; i++) {
-    console.log(`${ i }\n`)
-}
-
-
-
-console.log('Here\'s a do-while loop showing 1...10:\n')
-let i = 0
-do {
-    console.log(i + '\n')
-    i++
-} while (i < 10)
-
-
-
-console.log('Here\'s a while loop showing 1...10:\n')
-let j = 0
-while (j < 10) {
-    console.log(`${ j }\n`)
-    j++
-}
-
-
-
-console.log('Here\'s a foreach loop iterating over an array showing 1...10:\n')
-let nums = [...Array(10).keys()]
-nums.forEach(num => {
-    console.log(`${ num }\n`)
-})
-
-
-
-console.log('Here\'s a multiplication table method rendered in the console with a for loop:\n')
-console.log('This demos variables, concatenation, for loops, console.logging and methods, along with method parameters\n')
-let timesTable = (to) => {
-    console.log('Here\'s a times table to ' + to + '\n')
-
-    if (Number.isInteger(to)) {
-        //row iterator
-        for (let i = 1; i <= to; i++) {
-            let row = ""
-            //column iterator
-            for (let j = 1; j <= to; j++) {
-                row += `${i * j}\t`
-            }
-            console.log(row)
-        }
+        string += "</div>\n"
     } else {
-        console.log(`Sorry, ${to} isn\'t a number!`)
+        string = 'Provide some inputs'
     }
+
+    document.getElementById("output").innerHTML = string;
 }
-timesTable(4)
-
-timesTable(12)
-
-timesTable('x')
-*/

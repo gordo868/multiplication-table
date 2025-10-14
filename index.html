@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Multiplication Table rendered in the browser console</title>
+    <title>Flexbox practice</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -14,20 +14,22 @@
 
     <div class="generate-box">
         <div class="inputs">
-            <label for="rows">Rows:
-                <input id="rows" type="number" value="10" placeholder="How many rows?"/>
+            <label for="flexRows">Rows:
+                <input id="flexRows" type="number" value="10" placeholder="How many rows?"/>
             </label>
 
-            <label for="cols">Columns:
-                <input id="cols" type="number" value="10" placeholder="How many columns?"/>
+            <label for="flexCols">Columns:
+                <input id="flexCols" type="number" value="10" placeholder="How many cols?"/>
             </label>
 
-            <label for="highlight">Highlight:
-                <input id="highlight" type="number" placeholder="Highlight row and col?"/>
+            <label for="flexHighlight">Highlight:
+                <input id="flexHighlight" type="number" placeholder="Highlight row and col?"/>
             </label>
         </div>
 
-        <button id="generate" onclick="createWithHtmlTable(getInputValueAsNumber('rows'),getInputValueAsNumber('cols'), getInputValueAsNumber('highlight'))">Generate TABLE!</button>
+
+
+        <button id="generate" onclick="createFlexTable(getInputValueAsNumber('flexRows'),getInputValueAsNumber('flexCols'), getInputValueAsNumber('flexHighlight'))">Generate TABLE!</button>
     </div>
 
     <div id="output"></div>

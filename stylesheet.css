@@ -1,3 +1,4 @@
+
 section.container {
     width: 70vw;
     height: 100vh;
@@ -9,7 +10,6 @@ section.container {
     gap: 10px;
 
     font-family: Avenir, Helvetica, Arial, sans-serif;
-
 
     .generate-box {
         display: flex;
@@ -28,38 +28,44 @@ section.container {
         }
 
         button {
-            background-color: pink;
+            background-color: #eaae23;
         }
     }
 
     #output {
-        overflow: scroll;
-        max-width: 90vw;
-        max-height: 60vh;
 
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
+        border: 1px solid #323ed1;
 
-            td {
-                padding: 2px;
+        div.tableRow {
+            display: flex;
+            justify-content: space-between;
+
+            div.tableCol {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                border: 1px solid #323ed1;
+                width: 30px;
+                height: 30px;
                 text-align: center;
-            }
 
-            .highlight {
-                background-color: lightgreen;
             }
         }
 
-        table {
-           td:first-of-type, tr:first-of-type, td:last-of-type, tr:last-of-type {
-                background-color: lightblue;
+        div.tableContainer {
+
+
+            .tableHighlight {
+                background-color: #fde3a5;
             }
 
-        }
+            div.tableCol:first-of-type, div.tableRow:first-of-type, div.tableCol:last-of-type, div.tableRow:last-of-type {
+                background-color: #969edb;
+            }
 
-        tr:hover {
-            background-color: yellow;
+            div.tableRow:hover {
+                background-color: #b5ede5;
+            }
         }
     }
 }
